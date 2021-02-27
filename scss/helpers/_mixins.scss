@@ -1,0 +1,20 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin transition($time) {
+    -webkit-transition: ($time);
+    -o-transition: ($time);
+    -ms-transition: ($time);
+    -moz-transition: ($time);
+    transition: ($time);
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
