@@ -136,6 +136,9 @@ body {
   body main #about #intern-txt {
     background-color: #ece6f3;
     border-radius: 50px; }
+    body main #about #intern-txt #msg-icon {
+      color: #9e96cd;
+      margin: 0.5rem; }
   body main #about #intern-img {
     margin-bottom: 2rem; }
   body main #about #school {
@@ -144,20 +147,33 @@ body {
       -webkit-box-shadow: none;
       box-shadow: none;
       width: 50%; }
+    body main #about #school #school-img {
+      border: 1rem solid white; }
   body footer {
-    background-color: #111111;
-    color: white;
+    background-color: #f5f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    body footer ul {
-      list-style: none;
-      display: flex; }
-      body footer ul li {
-        margin: 1rem; }
+    body footer #contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      body footer #contact-info a {
+        font-weight: 700; }
+      body footer #contact-info ul {
+        list-style: none;
+        display: flex;
+        padding: 0; }
+        body footer #contact-info ul li {
+          margin: 1rem; }
+          body footer #contact-info ul li a {
+            font-size: 200%; }
     body footer #contact-img {
-      width: 60%; }
+      width: 60%;
+      margin: 1rem;
+      border: 1rem solid white; }
 
 @media screen and (min-width: 767px) {
   body header nav .menu-btn {
@@ -198,13 +214,10 @@ body {
     body main #about .text-cont .text,
     body main #about .text-cont img {
       margin: 3rem; }
-  body main #about #msg-icon {
-    color: #9e96cd;
-    margin: 0.5rem; }
   body footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row; }
     body footer #contact-img {
-      width: 25%; } }
+      width: 20%; } }
