@@ -1,0 +1,51 @@
+#work {
+    .wrapper {
+        margin: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .img-cont {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            img {
+                width: 80vw;
+                margin: 1rem;
+                -webkit-box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
+                box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
+                &:hover {
+                    width: 90vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 768px) {
+    #work {
+        h2 {
+            font-size: 32px;
+        }
+        .wrapper {
+            margin-bottom: 5rem;
+            .img-cont {
+                img {
+                    width: 20vw;
+                    &:hover {
+                        width: 20vw;
+                    }
+                }
+            }
+            .text {
+                width: 40vw;
+                margin: 1rem;
+            }
+            #task-app-wrapper {
+                .text {
+                    width: 20vw;
+                }
+            }
+        }
+    }
+}

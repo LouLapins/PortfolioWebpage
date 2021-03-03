@@ -1,0 +1,84 @@
+/***** ABOUT ******/
+
+#about {
+    .text-cont {
+        @include flexCenter(column);
+        padding: 2rem;
+        h2 {
+            margin: 0 0 2rem 0;
+        }
+        h3 {
+            span {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+        h5 {
+            font-weight: 300;
+        }
+        .text {
+            padding: 2rem;
+        }
+        img {
+            width: 100%;
+        }
+        a {
+            &:hover {
+                color: rgb(83, 83, 83);
+            }
+        }
+    }
+    #school {
+        background-color: #f5f5f5;
+        #school-logo {
+            width: 50%;
+        }
+        #school-img {
+            border: 1rem solid white;
+        }
+        a {
+            font-weight: 700;
+        }
+    }
+    #intern-txt {
+        background-color: #ece6f3;
+        border-radius: 50px;
+        #msg-icon {
+            background-color: white;
+            color: $accent-clr;
+            font-size: 12px;
+            margin: 3px;
+            padding: 1rem 2rem 1rem 2rem;
+            border-radius: 10px;
+            &:hover {
+                color: #7971a5;
+            }
+        }
+    }
+    #intern-img {
+        margin-bottom: 2rem;
+    }
+}
+
+//// MEDIA QUERIES ///////
+@media screen and(min-width: 768px) {
+    #about {
+        .text-cont {
+            @include flexCenter(row);
+            #school-logo {
+                margin: 0;
+                width: 10%;
+            }
+            img {
+                width: 45%;
+            }
+            #intern-img {
+                width: 30%;
+            }
+            .text,
+            img {
+                margin: 3rem;
+            }
+        }
+    }
+}

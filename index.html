@@ -20,15 +20,16 @@
 
         <nav>
             <h1>Lou Lapins</h1>
-            <div class="menu-btn">
-                <div class="menu-btn__bar"></div>
-            </div>
-            <ul>
-                <li> <a href="#home">Home</a> </li>
+            <ul class="nav-links">
+                <!-- <li> <a href="#home">Home</a> </li> -->
                 <li> <a href="#about">About</a> </li>
                 <li> <a href="#work">Work</a> </li>
                 <li> <a href="#contact">Contact</a> </li>
             </ul>
+            <div class="menu-btn">
+                <div class="menu-btn__bar"></div>
+            </div>
+
         </nav>
 
         <div class="header-wrapper">
@@ -43,75 +44,142 @@
     </header>
 
 
-    <main>
 
-        <!-- ABOUT -->
+    <!-- WORK -->
 
-        <section id="about">
+    <section id="work">
+        <h2>Some of my previous projects.</h2>
+        <div class="wrapper" id="webshop-wrapper">
 
+            <div class="img-cont">
+                <!-- <img id="webshop-img" src="img/webshop.png" alt="Screenshot of webshop"> -->
+                <img id="webshop-mob-img" src="img/webshop.png" alt="Screenshot of mobile webshop">
+                <img id="cart-img" src="img/cart.png" alt="Screenshot of shopping cart">
+                <img id="checkout-img" src="img/checkout.png" alt="Screenshot of checkout page">
+            </div>
+            <div class="text">
+                <h3>Webshop with JQuery and SCSS</h3>
+                <p>Shopping cart items and customer details saved in local storage and summarized in an order confirmation at the final step.</p>
+            </div>
+        </div>
 
-            <div class="text-cont">
+        <div class="wrapper" id="task-app-wrapper">
+
+            <div>
+                <div class="img-cont">
+                    <img id="node-app-img" src="img/node-app.png" alt="Screenshot of MongoDB app">
+                </div>
                 <div class="text">
-                    <h2>A little bit about me.</h2>
-                    <p>My interest in travel is what drove me to coding. Frequently moving to new places, I wanted a job I could do from anywhere in the world. </p>
-
-                    <p>I started taking online classes and, little did I know, I'd stumbled upon the fun and fulfilling work I'd always been looking for.</p>
-
-                    <p>I enjoy solving problems and using my creativity to make beautiful, user-friendly websites and apps.</p>
-
-                    <p>Now settled in Stockholm, I'm studying full-time, learning all I can to become a skilled developer.</p>
-
+                    <h3>Task app with Node.js and Express</h3>
+                    <p>Lets user create, read, update and delete tasks stored in MongoDB.</p>
                 </div>
-
-
-                <img src="img/kampot-ps copy.JPG" alt="Lou by river">
-
             </div>
+            <div>
 
-            <div id="school" class="text-cont">
+                <div class="img-cont">
+                    <img id="teacher-site-img" src="img/imitation-site.png" alt="Screenshot of teacher's design site">
+                </div>
                 <div class="text">
-                    <h2>What am I studying?</h2>
-                    <a href="https://medieinstitutet.se/"><img id="school-logo" src="img/medieinst-logo.png" alt="Medieinstitutet logo"></a>
-                    <h3>Front End Developer <span>2 year program </span></h3>
-                    <h5>Graduating May 2022</h5>
-
-                    <p>In this program I'm learning React, Angular, Javascript, Node.js, HTML and CSS/Sass while practicing Agile methodology, Gitflow and UX/Usability.</p>
-                    <p>You can read more about my courses <a href="https://medieinstitutet.se/utbildningar/front-end-developer/">here.</a> </p>
+                    <h3>Follow a given design</h3>
+                    <p>Responsive website made with SCSS after my teacher's design, with hamburger bar animation.</p>
                 </div>
-                <img id="school-img" src="img/classmate.jpg" alt="Girl with laptop and postits">
+            </div>
+            <div>
+                <div class="img-cont">
+                    <img id="todo-app-img" src="img/todo-app.png" alt="Screenshot of todo app">
+                </div>
+                <div class="text">
+                    <h3>Task app with Vanilla JS</h3>
+                    <p>My first Javascript project, lets user add tasks, mark them as completed or delete them.</p>
+                </div>
             </div>
 
-            <div class="text-cont">
-                <img id="intern-img" src="img/postits.jpg" alt="Students in conversation">
-                <div id="intern-txt" class="text">
-                    <h2>Internship wanted.</h2>
-                    <p>As part of my program I will be doing an internship &lpar;LIA&rpar; starting October 2021.</p>
-                    <p>The initial period will last 10 weeks and the second period will last 16 weeks.</p>
-                    <p>The whole period can be done at the same company or be divided between two places.</p>
-                    <h5>First phase: 4 Oct - 10 Dec 2021.</h5>
-                    <h5>Second phase: 24 Jan - 13 May 2022.</h5>
+        </div>
 
-                    <p>Sound interesting? <a class="msg-link" href="#contact">Send me a message!<i id="msg-icon" class="fas fa-envelope"></i></a> </p>
-                </div>
+
+
+        <div class="wrapper">
+
+            <div class="img-cont">
+                <img id="boostrap-site-img" src="img/bootstrap-site.png" alt="Screenshot of bootstrap site">
+                <img src="img/bootstrap-carousel.png" alt="Screenshot of image carousel">
+            </div>
+            <div class="text">
+                <h3>Responsive Bootstrap website</h3>
+                <p>Mock travel blog featuring automatic image slider and modal. First school project.</p>
+            </div>
+        </div>
+
+        <div class="wrapper">
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+
+        <div class="text-cont">
+            <div class="text">
+                <h2>A little bit about me.</h2>
+                <p>My interest in travel is what drove me to coding. Frequently moving to new places, I wanted a job I could do from anywhere in the world. </p>
+
+                <p>I started taking online classes and, little did I know, I'd stumbled upon the fun and fulfilling work I'd always been looking for.</p>
+
+                <p>I enjoy solving problems and using my creativity to make beautiful, user-friendly websites and apps.</p>
+
+                <p>Now settled in Stockholm, I'm studying full-time, learning all I can to become a skilled developer.</p>
 
             </div>
 
 
-        </section>
+            <img src="img/kampot-ps copy.JPG" alt="Lou by river">
 
-        <!-- WORK -->
+        </div>
 
-        <!-- <section id="work">
-            
-        </section> -->
-    </main>
+        <div id="school" class="text-cont">
+            <div class="text">
+                <h2>What am I studying?</h2>
+                <a href="https://medieinstitutet.se/"><img id="school-logo" src="img/medieinst-logo.png" alt="Medieinstitutet logo"></a>
+                <h3>Front End Developer <span>2 year program </span></h3>
+                <h5>Graduating May 2022</h5>
+
+                <p>In this program I'm learning React, Angular, Javascript, Node.js, HTML and CSS/Sass while practicing Agile methodology, Gitflow and UX/Usability.</p>
+                <p>You can read more about my courses <a href="https://medieinstitutet.se/utbildningar/front-end-developer/">here.</a> </p>
+            </div>
+            <img id="school-img" src="img/classmate.jpg" alt="Girl with laptop and postits">
+        </div>
+
+        <div class="text-cont">
+            <img id="intern-img" src="img/postits.jpg" alt="Students in conversation">
+            <div id="intern-txt" class="text">
+                <h2>Internship wanted.</h2>
+                <p>As part of my program I will be doing an internship &lpar;LIA&rpar; starting October 2021.</p>
+                <p>The initial period will last 10 weeks and the second period will last 16 weeks.</p>
+                <p>The whole period can be done at the same company or be divided between two places.</p>
+                <h5>First phase: 4 Oct - 10 Dec 2021.</h5>
+                <h5>Second phase: 24 Jan - 13 May 2022.</h5>
+
+                <p>Sound interesting? <a class="msg-link" href="#contact">Send me a message!</a> </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
     <!-- CONTACT -->
 
     <footer id="contact">
 
 
 
-
+        <img src="img/selfie.jpg" alt="Selfie of Lou" id="contact-img" />
         <div id="contact-info">
             <h2>Do you like my work?</h2>
             <p>Get in touch!</p>
@@ -130,7 +198,7 @@
                 </li>
             </ul>
         </div>
-        <img src="img/selfie.jpg" alt="Selfie of Lou" id="contact-img" />
+
 
     </footer>
 

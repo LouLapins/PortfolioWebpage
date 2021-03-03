@@ -1,4 +1,3 @@
-/***** BASE STYLES *****/
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@ body {
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
   color: #2d2926;
-  scroll-behavior: smooth;
   /***** HEADER ******/
   /***** ABOUT ******/ }
   body a {
@@ -28,9 +26,9 @@ body {
     body header h2 {
       font-family: "Fira Sans", sans-serif; }
     body header nav {
+      position: sticky;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       background-color: rgba(255, 255, 255, 0.204);
       width: 100%; }
       body header nav h1 {
@@ -51,7 +49,8 @@ body {
         width: 35px;
         height: 35px;
         cursor: pointer;
-        transition: all .5s ease-in-out; }
+        transition: all .5s ease-in-out;
+        z-index: 200; }
         body header nav .menu-btn .menu-btn__bar {
           background-color: white;
           height: 3px;
@@ -84,8 +83,33 @@ body {
       body header nav .menu-btn.open .menu-btn__bar::after {
         width: 100%;
         transform: rotate(-45deg); }
-    body header ul {
-      display: none; }
+      body header nav .nav-links {
+        list-style: none;
+        clip-path: circle(100px at 90% -20%);
+        -webkit-clip-path: circle(100px at 90% -20%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100vh;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        z-index: 100;
+        background-color: black;
+        position: absolute; }
+        body header nav .nav-links li a {
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 18px;
+          color: white; }
+          body header nav .nav-links li a:hover {
+            color: #777777; }
+      body header nav .nav-links.open {
+        clip-path: circle(2000px at 90% -20%);
+        -webkit-clip-path: circle(2000px at 90% -20%);
+        transition: all 1s ease-out; }
     body header .header-wrapper {
       padding: 3rem;
       color: white; }
@@ -97,7 +121,11 @@ body {
       border: none;
       background-color: #9e96cd;
       padding: 1.4rem 2rem 1.4rem 2rem;
-      border-radius: 50px; }
+      border-radius: 50px;
+      -webkit-box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
+      box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2); }
+      body header .action-btn:hover {
+        background-color: #adaeef; }
       body header .action-btn a {
         color: white;
         text-transform: uppercase;
@@ -112,56 +140,138 @@ body {
         color: white;
         font-size: 40px;
         margin: 0 1rem 1rem 0; }
-  body main #about a {
-    font-weight: 700; }
-  body main #about .text-cont {
+        body header .msg-link #msg-icon:hover {
+          color: black; }
+  @media screen and (min-width: 768px) {
+    body header nav .menu-btn {
+      display: none; }
+    body header nav .nav-links {
+      flex-direction: row;
+      -webkit-clip-path: none;
+      clip-path: none;
+      height: 4rem;
+      background-color: transparent;
+      justify-content: flex-end; }
+      body header nav .nav-links li a {
+        margin: 2rem; }
+    body header .header-wrapper {
+      padding: 0;
+      text-align: center; }
+      body header .header-wrapper h2 {
+        font-size: 72px;
+        line-height: 80px;
+        margin-bottom: 0; }
+      body header .header-wrapper h3 {
+        font-size: 28px; }
+    body header .action-btn a {
+      padding: 2rem;
+      font-size: 20px; } }
+  body #work .wrapper {
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    body #work .wrapper .img-cont {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; }
+      body #work .wrapper .img-cont img {
+        width: 80vw;
+        margin: 1rem;
+        -webkit-box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
+        box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2); }
+        body #work .wrapper .img-cont img:hover {
+          width: 90vw; }
+  @media screen and (min-width: 768px) {
+    body #work h2 {
+      font-size: 32px; }
+    body #work .wrapper {
+      margin-bottom: 5rem; }
+      body #work .wrapper .img-cont img {
+        width: 20vw; }
+        body #work .wrapper .img-cont img:hover {
+          width: 20vw; }
+      body #work .wrapper .text {
+        width: 40vw;
+        margin: 1rem; }
+      body #work .wrapper #task-app-wrapper .text {
+        width: 20vw; } }
+  body #about .text-cont {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 2rem 0 2rem; }
-    body main #about .text-cont h2 {
+    padding: 2rem; }
+    body #about .text-cont h2 {
       margin: 0 0 2rem 0; }
-    body main #about .text-cont h3 span {
+    body #about .text-cont h3 span {
       font-size: 16px;
       font-weight: 400; }
-    body main #about .text-cont h5 {
+    body #about .text-cont h5 {
       font-weight: 300; }
-    body main #about .text-cont .text {
+    body #about .text-cont .text {
       padding: 2rem; }
-    body main #about .text-cont img {
-      width: 100%;
-      -webkit-box-shadow: 3px 11px 20px 0px rgba(0, 0, 0, 0.15);
-      box-shadow: 3px 11px 20px 0px rgba(0, 0, 0, 0.15); }
-  body main #about #intern-txt {
+    body #about .text-cont img {
+      width: 100%; }
+    body #about .text-cont a:hover {
+      color: #535353; }
+  body #about #school {
+    background-color: #f5f5f5; }
+    body #about #school #school-logo {
+      width: 50%; }
+    body #about #school #school-img {
+      border: 1rem solid white; }
+    body #about #school a {
+      font-weight: 700; }
+  body #about #intern-txt {
     background-color: #ece6f3;
     border-radius: 50px; }
-    body main #about #intern-txt #msg-icon {
+    body #about #intern-txt #msg-icon {
+      background-color: white;
       color: #9e96cd;
-      margin: 0.5rem; }
-  body main #about #intern-img {
+      font-size: 12px;
+      margin: 3px;
+      padding: 1rem 2rem 1rem 2rem;
+      border-radius: 10px; }
+      body #about #intern-txt #msg-icon:hover {
+        color: #7971a5; }
+  body #about #intern-img {
     margin-bottom: 2rem; }
-  body main #about #school {
-    background-color: #f4f7f7; }
-    body main #about #school #school-logo {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      width: 50%; }
-    body main #about #school #school-img {
-      border: 1rem solid white; }
+  @media screen and (min-width: 768px) {
+    body #about .text-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; }
+      body #about .text-cont #school-logo {
+        margin: 0;
+        width: 10%; }
+      body #about .text-cont img {
+        width: 45%; }
+      body #about .text-cont #intern-img {
+        width: 30%; }
+      body #about .text-cont .text,
+      body #about .text-cont img {
+        margin: 3rem; } }
   body footer {
-    background-color: #f5f7f7;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 1rem; }
     body footer #contact-info {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column; }
+      body footer #contact-info p {
+        margin-top: 0; }
       body footer #contact-info a {
         font-weight: 700; }
+        body footer #contact-info a:hover {
+          color: #535353; }
       body footer #contact-info ul {
         list-style: none;
         display: flex;
@@ -170,54 +280,18 @@ body {
           margin: 1rem; }
           body footer #contact-info ul li a {
             font-size: 200%; }
+            body footer #contact-info ul li a:hover {
+              color: #535353; }
     body footer #contact-img {
       width: 60%;
       margin: 1rem;
       border: 1rem solid white; }
-
-@media screen and (min-width: 767px) {
-  body header nav .menu-btn {
-    display: none; }
-  body header nav ul {
-    list-style: none;
-    display: flex; }
-    body header nav ul li a {
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      margin: 2rem; }
-  body header .header-wrapper {
-    padding: 0;
-    text-align: center; }
-    body header .header-wrapper h2 {
-      font-size: 72px;
-      line-height: 80px;
-      margin-bottom: 0; }
-    body header .header-wrapper h3 {
-      font-size: 28px; }
-  body header .action-btn a {
-    padding: 2rem;
-    font-size: 20px; }
-  body main #about .text-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; }
-    body main #about .text-cont #school-logo {
-      margin: 0;
-      width: 10%; }
-    body main #about .text-cont img {
-      width: 45%; }
-    body main #about .text-cont #intern-img {
-      width: 30%; }
-    body main #about .text-cont .text,
-    body main #about .text-cont img {
-      margin: 3rem; }
-  body footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; }
-    body footer #contact-img {
-      width: 20%; } }
+  @media screen and (min-width: 768px) {
+    body footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; }
+      body footer #contact-img {
+        width: 20%;
+        margin: 3rem; } }
