@@ -1,7 +1,7 @@
 /***** HEADER ******/
 
 header {
-    background: url('../img/hero-wall.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("../img/hero-wall.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,10 +16,8 @@ header {
         font-family: $heading-font;
     }
     nav {
-        position: sticky;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.204);
         width: 100%;
         h1 {
             font-size: 20px;
@@ -27,7 +25,7 @@ header {
             color: $main-clr;
             text-transform: uppercase;
             width: 5rem;
-            line-height: 1rem;
+            line-height: 0.8;
             margin: 1rem;
         }
         .menu-btn {
@@ -99,9 +97,10 @@ header {
                 text-transform: uppercase;
                 text-decoration: none;
                 font-size: 18px;
+                letter-spacing: 2px;
                 color: white;
                 &:hover {
-                    color: rgb(119, 119, 119);
+                    color: rgb(46, 46, 46);
                 }
             }
         }
@@ -112,7 +111,8 @@ header {
         }
     }
     .header-wrapper {
-        padding: 3rem;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
         color: $main-clr;
     }
     h2 {
@@ -120,23 +120,14 @@ header {
     }
     h3 {
         font-size: 24px;
+        font-weight: 400;
     }
     .action-btn {
-        border: none;
-        background-color: $accent-clr;
-        padding: 1.4rem 2rem 1.4rem 2rem;
-        border-radius: 50px;
-        -webkit-box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
-        box-shadow: 12px 28px 23px -5px rgba(0, 0, 0, 0.2);
-        &:hover {
-            background-color: #adaeef;
-        }
-        a {
-            color: $main-clr;
-            text-transform: uppercase;
-            font-family: $heading-font;
-            font-size: 14px;
-        }
+        @include buttonStyle;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        font-family: $heading-font;
+        font-size: 14px;
+        letter-spacing: 2px;
     }
     .msg-link {
         text-decoration: none;
@@ -157,6 +148,10 @@ header {
 @media screen and(min-width: 768px) {
     header {
         nav {
+            h1 {
+                font-size: 24px;
+                line-height: 0.8;
+            }
             .menu-btn {
                 display: none;
             }
@@ -174,7 +169,6 @@ header {
         }
         .header-wrapper {
             padding: 0;
-            text-align: center;
             h2 {
                 font-size: 72px;
                 line-height: 80px;
@@ -185,8 +179,8 @@ header {
             }
         }
         .action-btn {
+            padding: 1.5rem 2.5rem 1.5rem 2.5rem;
             a {
-                padding: 2rem;
                 font-size: 20px;
             }
         }

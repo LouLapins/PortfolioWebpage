@@ -1,84 +1,157 @@
-/***** ABOUT ******/
-
-#about {
-    .text-cont {
-        @include flexCenter(column);
-        padding: 2rem;
-        h2 {
-            margin: 0 0 2rem 0;
-        }
-        h3 {
-            span {
-                font-size: 16px;
-                font-weight: 400;
-            }
-        }
-        h5 {
-            font-weight: 300;
-        }
-        .text {
-            padding: 2rem;
-        }
-        img {
-            width: 100%;
-        }
-        a {
-            &:hover {
-                color: rgb(83, 83, 83);
-            }
-        }
-    }
-    #school {
-        background-color: #f5f5f5;
-        #school-logo {
-            width: 50%;
-        }
-        #school-img {
-            border: 1rem solid white;
-        }
-        a {
-            font-weight: 700;
-        }
-    }
-    #intern-txt {
-        background-color: #ece6f3;
-        border-radius: 50px;
-        #msg-icon {
-            background-color: white;
-            color: $accent-clr;
-            font-size: 12px;
-            margin: 3px;
-            padding: 1rem 2rem 1rem 2rem;
-            border-radius: 10px;
-            &:hover {
-                color: #7971a5;
-            }
-        }
-    }
-    #intern-img {
-        margin-bottom: 2rem;
-    }
-}
-
-//// MEDIA QUERIES ///////
-@media screen and(min-width: 768px) {
+    /***** ABOUT ******/
+    
     #about {
+        position: relative;
         .text-cont {
-            @include flexCenter(row);
+            @include flexCenter(column);
+            margin: 3rem;
+            .text {
+                margin: 0 0 2rem 0;
+            }
+            h3 {
+                span {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            h5 {
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 16px;
+            }
+            img {
+                width: 100%;
+            }
+            a {
+                &:hover {
+                    color: rgb(83, 83, 83);
+                }
+            }
+        }
+        #school {
+            position: relative;
+            .text {
+                z-index: 300;
+            }
             #school-logo {
-                margin: 0;
-                width: 10%;
+                width: 50%;
             }
-            img {
-                width: 45%;
+            #school-img {
+                z-index: 200;
             }
+            a {
+                font-weight: 700;
+            }
+            #square {
+                background-color: transparent;
+            }
+        }
+        #intern {
             #intern-img {
-                width: 30%;
+                z-index: 200;
+                margin-bottom: 2rem;
             }
-            .text,
-            img {
-                margin: 3rem;
+            #intern-txt {
+                z-index: 300;
+                .dates {
+                    font-weight: 500;
+                }
+                h5 {
+                    .msg-link {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        #ball-lg {
+            background-color: transparent;
+        }
+    }
+    
+    /// MEDIA QUERIES ///
+    // Small devices, landscape phones //
+    @media screen and(min-width: 576px) {
+        #about {
+            #intern {
+                #intern-img {
+                    width: 60%;
+                }
             }
         }
     }
-}
+    
+    // Medium devices, tablets //
+    @media screen and(min-width: 768px) {
+        #about {
+            h2 {
+                font-size: 46px;
+            }
+            .text-cont {
+                img {
+                    width: 80%;
+                }
+            }
+            #school {
+                #school-logo {
+                    margin: 0;
+                }
+            }
+            #intern {
+                #intern-img {
+                    width: 40%;
+                    margin: 0 2rem 0 0;
+                }
+            }
+        }
+    }
+    
+    // Large devices, desktops //
+    @media screen and(min-width: 992px) {
+        #about {
+            .text-cont {
+                @include flexCenter(row);
+                img {
+                    width: 45%;
+                }
+                .text {
+                    width: 35%;
+                }
+            }
+            #school {
+                #square {
+                    background-color: lavender;
+                    right: 380px;
+                    bottom: 40px;
+                    width: 400px;
+                    height: 400px;
+                    position: absolute;
+                }
+            }
+            #ball-lg {
+                background-color: lavender;
+                left: 100px;
+                bottom: 40px;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 100;
+                width: 300px;
+                height: 300px;
+            }
+            #intern {
+                #intern-img {
+                    width: 20%;
+                }
+                #intern-txt {
+                    h5 {
+                        .msg-link {
+                            background-color: lavender;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and(min-width: 1024px) {}

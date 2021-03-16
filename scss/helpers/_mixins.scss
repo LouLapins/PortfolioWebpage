@@ -18,3 +18,14 @@
     -ms-transform: $property;
     transform: $property;
 }
+
+@mixin buttonStyle {
+    border: none;
+    background-color: #9f95d7cc;
+    border-radius: 50px;
+    color: $main-clr;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $accent-clr;
+    }
+}
