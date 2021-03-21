@@ -204,7 +204,7 @@ body header h3 {
 
 body header .action-btn {
   border: none;
-  background-color: #9f95d7cc;
+  background-color: #a6a7e7bd;
   border-radius: 50px;
   color: white;
   text-transform: uppercase;
@@ -215,7 +215,7 @@ body header .action-btn {
 }
 
 body header .action-btn:hover {
-  background-color: #9f95d7;
+  background-color: #A6A7E7;
 }
 
 body header .msg-link {
@@ -366,7 +366,7 @@ body #work .card .img-cont .mob-img {
 }
 
 body #work .card .text {
-  width: 90%;
+  width: 80%;
   text-align: center;
 }
 
@@ -521,11 +521,14 @@ body #about #ball-lg {
   body #about .text-cont img {
     width: 80%;
   }
+  body #about .text-cont .text {
+    width: 80%;
+  }
   body #about #school #school-logo {
     margin: 0;
   }
   body #about #intern #intern-img {
-    width: 40%;
+    width: 50%;
     margin: 0 2rem 0 0;
   }
 }
@@ -545,6 +548,9 @@ body #about #ball-lg {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   body #about .text-cont img {
     width: 45%;
@@ -552,23 +558,39 @@ body #about #ball-lg {
   body #about .text-cont .text {
     width: 35%;
   }
+  body #about #intern #intern-txt {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body #about .text-cont img {
+    width: 45%;
+  }
+  body #about .text-cont .text {
+    width: 40%;
+  }
+  body #about #school {
+    padding: 2rem 0 2rem 0;
+  }
   body #about #school #square {
     background-color: lavender;
-    right: 380px;
-    bottom: 40px;
+    z-index: 100;
     width: 400px;
     height: 400px;
     position: absolute;
+    right: 340px;
+    top: 5px;
   }
   body #about #ball-lg {
-    background-color: lavender;
-    left: 100px;
-    bottom: 40px;
     border-radius: 50%;
     position: absolute;
     z-index: 100;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    background-color: lavender;
+    left: 200px;
+    bottom: 10px;
   }
   body #about #intern #intern-img {
     width: 20%;

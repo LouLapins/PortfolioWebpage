@@ -48,7 +48,7 @@
             }
         }
         .text {
-            width: 90%;
+            width: 80%;
             text-align: center;
             h3 {
                 text-transform: uppercase;
@@ -60,6 +60,7 @@
 }
 
 /// MEDIA QUERIES ///
+// Small devices, landscape phones //
 @media screen and(min-width: 576px) {
     #work {
         .card {
@@ -68,6 +69,7 @@
     }
 }
 
+// Medium devices, tablets //
 @media screen and(min-width: 768px) {
     #work {
         .card {
@@ -77,6 +79,7 @@
     }
 }
 
+// Large devices, desktops //
 @media screen and(min-width: 992px) {
     #work {
         h2 {
@@ -106,3 +109,6 @@
         }
     }
 }
+
+// Larger desktop screens
+@media screen and(min-width: 1024px) {}
