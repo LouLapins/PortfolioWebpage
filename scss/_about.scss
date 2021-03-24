@@ -148,11 +148,11 @@
                     width: 400px;
                     height: 400px;
                     position: absolute;
-                    right: 340px;
-                    top: 5px;
+                    right: 330px;
+                    top: 10px;
                 }
             }
-            #ball-lg {
+            #circle {
                 border-radius: 50%;
                 position: absolute;
                 z-index: 100;
@@ -160,7 +160,7 @@
                 height: 350px;
                 background-color: lavender;
                 left: 200px;
-                bottom: 10px;
+                bottom: 5px;
             }
             #intern {
                 #intern-img {

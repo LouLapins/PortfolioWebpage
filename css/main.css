@@ -579,10 +579,10 @@ body #about #ball-lg {
     width: 400px;
     height: 400px;
     position: absolute;
-    right: 340px;
-    top: 5px;
+    right: 330px;
+    top: 10px;
   }
-  body #about #ball-lg {
+  body #about #circle {
     border-radius: 50%;
     position: absolute;
     z-index: 100;
@@ -590,7 +590,7 @@ body #about #ball-lg {
     height: 350px;
     background-color: lavender;
     left: 200px;
-    bottom: 10px;
+    bottom: 5px;
   }
   body #about #intern #intern-img {
     width: 20%;
