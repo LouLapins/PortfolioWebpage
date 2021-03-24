@@ -1,0 +1,62 @@
+footer {
+    background-color: $alt-clr;
+    @include flexCenter(column);
+    padding: 3rem;
+    color: $main-clr;
+    #logo {
+        text-transform: uppercase;
+        font-family: $heading-font;
+        font-weight: 700;
+        font-size: 48px;
+        width: 9.5rem;
+        line-height: 0.8;
+        &:hover {
+            color: rgb(83, 83, 83);
+        }
+    }
+    #contact-info {
+        @include flexCenter(column);
+        margin: 4rem;
+        p {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        a {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            &:hover {
+                color: rgb(83, 83, 83);
+            }
+        }
+    }
+    #socials {
+        list-style: none;
+        @include flexCenter(row);
+        padding: 0;
+        li {
+            margin: 1rem;
+            a {
+                font-size: 250%;
+                &:hover {
+                    color: rgb(83, 83, 83);
+                }
+            }
+        }
+    }
+}
+
+/// MEDIA QUERIES ///
+// Small devices, landscape phones //
+@media screen and(min-width: 576px) {}
+
+// Medium devices, tablets //
+@media screen and(min-width: 768px) {}
+
+// Large devices, desktops //
+@media screen and(min-width: 992px) {
+    footer {
+        @include flexCenter(row);
+        justify-content: space-evenly;
+    }
+}

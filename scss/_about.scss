@@ -1,0 +1,179 @@
+    /***** ABOUT ******/
+    
+    #about {
+        position: relative;
+        .text-cont {
+            @include flexCenter(column);
+            margin: 3rem;
+            .text {
+                margin: 0 0 2rem 0;
+            }
+            h3 {
+                span {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            h5 {
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 16px;
+            }
+            img {
+                width: 100%;
+            }
+            a {
+                &:hover {
+                    color: rgb(83, 83, 83);
+                }
+            }
+        }
+        #school {
+            position: relative;
+            .text {
+                z-index: 300;
+            }
+            #school-logo {
+                width: 50%;
+            }
+            #school-img {
+                z-index: 200;
+            }
+            a {
+                font-weight: 700;
+            }
+            #square {
+                background-color: transparent;
+            }
+        }
+        #intern {
+            #intern-img {
+                z-index: 200;
+                margin-bottom: 2rem;
+            }
+            #intern-txt {
+                z-index: 300;
+                .dates {
+                    font-weight: 500;
+                }
+                h5 {
+                    .msg-link {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        #ball-lg {
+            background-color: transparent;
+        }
+    }
+    
+    /// MEDIA QUERIES ///
+    // Small devices, landscape phones //
+    @media screen and(min-width: 576px) {
+        #about {
+            #intern {
+                #intern-img {
+                    width: 60%;
+                }
+            }
+        }
+    }
+    
+    // Medium devices, tablets //
+    @media screen and(min-width: 768px) {
+        #about {
+            h2 {
+                font-size: 46px;
+            }
+            .text-cont {
+                img {
+                    width: 80%;
+                }
+                .text {
+                    width: 80%;
+                }
+            }
+            #school {
+                #school-logo {
+                    margin: 0;
+                }
+            }
+            #intern {
+                #intern-img {
+                    width: 50%;
+                    margin: 0 2rem 0 0;
+                }
+            }
+        }
+    }
+    
+    // Large devices, desktops //
+    @media screen and(min-width: 992px) {
+        #about {
+            .text-cont {
+                @include flexCenter(row);
+                justify-content: space-evenly;
+                img {
+                    width: 45%;
+                }
+                .text {
+                    width: 35%;
+                }
+            }
+            #intern {
+                #intern-txt {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    
+    @media screen and(min-width: 1024px) {
+        #about {
+            .text-cont {
+                img {
+                    width: 45%;
+                }
+                .text {
+                    width: 40%;
+                }
+            }
+            #school {
+                padding: 2rem 0 2rem 0;
+                #square {
+                    background-color: lavender;
+                    z-index: 100;
+                    width: 400px;
+                    height: 400px;
+                    position: absolute;
+                    right: 330px;
+                    top: 10px;
+                }
+            }
+            #circle {
+                border-radius: 50%;
+                position: absolute;
+                z-index: 100;
+                width: 350px;
+                height: 350px;
+                background-color: lavender;
+                left: 200px;
+                bottom: 5px;
+            }
+            #intern {
+                #intern-img {
+                    width: 20%;
+                }
+                #intern-txt {
+                    h5 {
+                        .msg-link {
+                            background-color: lavender;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }

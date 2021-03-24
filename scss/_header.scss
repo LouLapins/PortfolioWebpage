@@ -1,0 +1,188 @@
+/***** HEADER ******/
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("../img/hero-wall.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    nav h1,
+    h2 {
+        font-family: $heading-font;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: $main-clr;
+            text-transform: uppercase;
+            width: 5rem;
+            line-height: 0.8;
+            margin: 1rem;
+        }
+        .menu-btn {
+            margin: 1rem;
+            position: relative;
+            @include flexCenter(row);
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            z-index: 200;
+            .menu-btn__bar {
+                // Styling av strecken i hamburgaren.
+                background-color: $main-clr;
+                height: 3px;
+                width: 40px;
+                border-radius: 1px;
+                position: relative;
+                transition: all .5s ease-in-out;
+            }
+            .menu-btn__bar::before {
+                // Positionering av strecken i hamburgaren.
+                background-color: $main-clr;
+                transition: all .5s ease-in-out;
+                content: "";
+                border-radius: 1px;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                transform: translateY(-10px);
+            }
+            .menu-btn__bar::after {
+                background-color: $main-clr;
+                transition: all .5s ease-in-out;
+                content: "";
+                border-radius: 1px;
+                position: absolute;
+                height: 100%;
+                width: 50%;
+                transform: translate(17px, 10px);
+            }
+        }
+        .menu-btn.open {
+            .menu-btn__bar {
+                background: transparent;
+            }
+            .menu-btn__bar::before {
+                transform: rotate(45deg);
+            }
+            .menu-btn__bar::after {
+                width: 100%;
+                transform: rotate(-45deg);
+            }
+        }
+        .nav-links {
+            list-style: none;
+            clip-path: circle(100px at 90% -20%);
+            -webkit-clip-path: circle(100px at 90% -20%);
+            @include flexCenter(column);
+            justify-content: space-evenly;
+            height: 100vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            z-index: 100;
+            background-color: black;
+            position: absolute;
+            li a {
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 18px;
+                letter-spacing: 2px;
+                color: white;
+                &:hover {
+                    color: rgb(46, 46, 46);
+                }
+            }
+        }
+        .nav-links.open {
+            clip-path: circle(2000px at 90% -20%);
+            -webkit-clip-path: circle(2000px at 90% -20%);
+            transition: all 1s ease-out;
+        }
+    }
+    .header-wrapper {
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        color: $main-clr;
+    }
+    h2 {
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .action-btn {
+        @include buttonStyle;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        font-family: $heading-font;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .msg-link {
+        text-decoration: none;
+        display: flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+        #msg-icon {
+            color: $main-clr;
+            font-size: 40px;
+            margin: 0 1rem 1rem 0;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 768px) {
+    header {
+        nav {
+            h1 {
+                font-size: 24px;
+                line-height: 0.8;
+            }
+            .menu-btn {
+                display: none;
+            }
+            .nav-links {
+                flex-direction: row;
+                -webkit-clip-path: none;
+                clip-path: none;
+                height: 4rem;
+                background-color: transparent;
+                justify-content: flex-end;
+                li a {
+                    margin: 2rem;
+                }
+            }
+        }
+        .header-wrapper {
+            padding: 0;
+            h2 {
+                font-size: 72px;
+                line-height: 80px;
+                margin-bottom: 0;
+            }
+            h3 {
+                font-size: 28px;
+            }
+        }
+        .action-btn {
+            padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+}
