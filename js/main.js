@@ -86,6 +86,12 @@ function renderProject() {
         description.innerHTML = myProjects[i].description;
         text.appendChild(description);
 
+        let moreBtn = document.createElement("p");
+        moreBtn.id = "more-btn"
+        moreBtn.innerHTML = "See more";
+        text.appendChild(moreBtn);
+
+
         card.addEventListener("click", () => { linkToSite(myProjects[i]) });
 
     }
