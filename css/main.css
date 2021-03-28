@@ -283,13 +283,22 @@ body header .msg-link #msg-icon:hover {
 }
 
 body #work {
-  background-color: #efefef;
+  background-color: white;
 }
 
 body #work h2 {
   margin: 0;
   padding: 2rem;
   text-align: center;
+}
+
+body #work .myModal {
+  position: absolute;
+  top: 8rem;
+  z-index: 2000;
+  height: 200rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 body #work #work-wrapper {
@@ -306,7 +315,17 @@ body #work #work-wrapper {
           align-items: center;
 }
 
+body #work #work-wrapper .project-img {
+  width: 90vw;
+  margin: 0 0 2rem 0;
+}
+
 body #work .card {
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  z-index: 3000;
+  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,15 +335,12 @@ body #work .card {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   background-color: white;
   -webkit-box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
   box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
   border-radius: 50px;
   width: 90vw;
+  height: 80vh;
   margin: 0 0 2rem 0;
   padding: 3rem 0 2rem 0;
   cursor: pointer;
@@ -351,7 +367,7 @@ body #work .card .img-cont {
 }
 
 body #work .card .img-cont .desk-img {
-  width: 100%;
+  width: 90%;
   padding: 0 0 2rem 0;
 }
 
@@ -364,12 +380,12 @@ body #work .card .img-cont .mob-img {
   box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
 }
 
-body #work .card .text {
+body #work .card .description {
   width: 80%;
   text-align: center;
 }
 
-body #work .card .text h3 {
+body #work .card .description h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 18px;
@@ -386,13 +402,16 @@ body #work .card #more-btn:hover {
 }
 
 @media screen and (min-width: 576px) {
+  body #work #work-wrapper .project-img {
+    width: 40vw;
+  }
   body #work .card {
     width: 60vw;
   }
 }
 
 @media screen and (min-width: 768px) {
-  body #work .card {
+  body #work #work-wrapper .project-img {
     width: 50vw;
     margin: 2rem;
   }
@@ -402,14 +421,20 @@ body #work .card #more-btn:hover {
   body #work h2 {
     font-size: 46px;
   }
+  body #work #work-wrapper .project-img {
+    padding: 4rem 0 1rem 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 25vw;
+  }
   body #work .card {
     padding: 4rem 0 1rem 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 40vw;
-    height: 70vh;
   }
   body #work .card .img-cont .desk-img {
     padding: 0 0 3rem 0;
@@ -418,10 +443,10 @@ body #work .card #more-btn:hover {
     top: 90px;
     left: 10px;
   }
-  body #work .card .text {
+  body #work .card .description {
     width: 30vw;
   }
-  body #work .card .text h3 {
+  body #work .card .description h3 {
     font-size: 20px;
   }
 }
@@ -729,5 +754,9 @@ body footer #socials li a:hover {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
+}
+
+.lockScreen {
+  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */

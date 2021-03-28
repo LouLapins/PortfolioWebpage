@@ -1,26 +1,43 @@
 #work {
-    background-color: $soft-clr;
+    background-color: $main-clr;
     h2 {
         margin: 0;
         padding: 2rem;
         text-align: center;
+    }
+    .myModal {
+        position: absolute;
+        top: 8rem;
+        z-index: 2000;
+        height: 200rem;
+        width: 100%;
+        background-color: rgba( 255, 255, 255, .6);
     }
     #work-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        .project-img {
+            width: 90vw;
+            margin: 0 0 2rem 0;
+        }
     }
     .card {
+        position: fixed;
+        top: 5vh;
+        left: 5vw;
+        z-index: 3000;
+        overflow: scroll;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        flex-direction: column;
         background-color: white;
         -webkit-box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
         box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
         border-radius: 50px;
         width: 90vw;
+        height: 80vh;
         margin: 0 0 2rem 0;
         padding: 3rem 0 2rem 0;
         cursor: pointer;
@@ -35,7 +52,7 @@
             flex-wrap: wrap;
             position: relative;
             .desk-img {
-                width: 100%;
+                width: 90%;
                 padding: 0 0 2rem 0;
             }
             .mob-img {
@@ -47,7 +64,7 @@
                 box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
             }
         }
-        .text {
+        .description {
             width: 80%;
             text-align: center;
             h3 {
@@ -71,6 +88,11 @@
 // Small devices, landscape phones //
 @media screen and(min-width: 576px) {
     #work {
+        #work-wrapper {
+            .project-img {
+                width: 40vw;
+            }
+        }
         .card {
             width: 60vw;
         }
@@ -80,9 +102,11 @@
 // Medium devices, tablets //
 @media screen and(min-width: 768px) {
     #work {
-        .card {
-            width: 50vw;
-            margin: 2rem;
+        #work-wrapper {
+            .project-img {
+                width: 50vw;
+                margin: 2rem;
+            }
         }
     }
 }
@@ -93,11 +117,16 @@
         h2 {
             font-size: 46px;
         }
+        #work-wrapper {
+            .project-img {
+                padding: 4rem 0 1rem 0;
+                flex-direction: column;
+                width: 25vw;
+            }
+        }
         .card {
             padding: 4rem 0 1rem 0;
             flex-direction: column;
-            width: 40vw;
-            height: 70vh;
             .img-cont {
                 .desk-img {
                     padding: 0 0 3rem 0;
@@ -107,7 +136,7 @@
                     left: 10px;
                 }
             }
-            .text {
+            .description {
                 width: 30vw;
                 h3 {
                     font-size: 20px;
