@@ -2,6 +2,9 @@
     
     #about {
         position: relative;
+        h2 {
+            border-bottom: 2rem solid $soft-clr;
+        }
         .text-cont {
             @include flexCenter(column);
             margin: 3rem;
@@ -43,9 +46,6 @@
             a {
                 font-weight: 700;
             }
-            #square {
-                background-color: transparent;
-            }
         }
         #intern {
             #intern-img {
@@ -66,9 +66,6 @@
                     }
                 }
             }
-        }
-        #ball-lg {
-            background-color: transparent;
         }
     }
     
@@ -145,25 +142,6 @@
             }
             #school {
                 padding: 2rem 0 2rem 0;
-                #square {
-                    background-color: lavender;
-                    z-index: 100;
-                    width: 400px;
-                    height: 400px;
-                    position: absolute;
-                    right: 330px;
-                    top: 10px;
-                }
-            }
-            #circle {
-                border-radius: 50%;
-                position: absolute;
-                z-index: 100;
-                width: 350px;
-                height: 350px;
-                background-color: lavender;
-                left: 200px;
-                bottom: 5px;
             }
             #intern {
                 #intern-img {

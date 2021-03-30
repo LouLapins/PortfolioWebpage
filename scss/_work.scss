@@ -1,32 +1,61 @@
 #work {
-    background-color: $soft-clr;
+    background-color: $main-clr;
     h2 {
-        margin: 0;
-        padding: 2rem;
+        margin: 2rem;
         text-align: center;
+        border-bottom: 2rem solid $soft-clr;
+    }
+    .myModal {
+        position: absolute;
+        top: 8rem;
+        z-index: 2000;
+        height: 200rem;
+        width: 100%;
+        background-color: rgba( 255, 255, 255, .6);
     }
     #work-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        .project-img {
+            width: 70vw;
+            margin: 2rem;
+            position: relative;
+            border-radius: 25px;
+            -webkit-box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+            box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+            cursor: pointer;
+            &:hover {
+                -webkit-box-shadow: 7px 17px 20px 6px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+                box-shadow: 7px 17px 20px 6px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+            }
+        }
     }
     .card {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
+        position: fixed;
+        top: 10vh;
+        left: 5vw;
+        z-index: 3000;
+        overflow: scroll;
+        @include flexCenter(column);
         background-color: white;
         -webkit-box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
         box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
-        border-radius: 50px;
+        border-radius: 10px;
         width: 90vw;
-        margin: 0 0 2rem 0;
-        padding: 3rem 0 2rem 0;
-        cursor: pointer;
-        &:hover {
-            -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 13px 33px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 10px 13px -7px #000000, -1px 13px 33px 3px rgba(0, 0, 0, 0.1);
+        padding: 3rem 0 1rem 0;
+        .close-btn {
+            font-size: 20px;
+            font-weight: 700;
+            align-self: flex-end;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            &:hover {
+                color: $hover-clr;
+            }
         }
         .img-cont {
             display: flex;
@@ -36,32 +65,40 @@
             position: relative;
             .desk-img {
                 width: 100%;
-                padding: 0 0 2rem 0;
+                margin-bottom: 2rem;
             }
             .mob-img {
                 width: 25%;
                 position: absolute;
-                top: 45px;
+                top: 50px;
                 left: 10px;
                 -webkit-box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
                 box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
             }
         }
-        .text {
-            width: 80%;
+        .description {
+            width: 90%;
             text-align: center;
+            @include flexCenter(column);
             h3 {
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-size: 18px;
             }
-        }
-        #more-btn {
-            font-family: $main-font;
-            font-size: 14px;
-            font-weight: 700;
-            &:hover {
-                color: $hover-clr;
+            .visit-btn {
+                font-size: 14px;
+                background-color: black;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                border-radius: 10px;
+                color: $main-clr;
+                margin: 1rem;
+                border: 1px solid black;
+                &:hover {
+                    background-color: $main-clr;
+                    color: $alt-clr;
+                    border: 1px solid black;
+                }
             }
         }
     }
@@ -71,8 +108,14 @@
 // Small devices, landscape phones //
 @media screen and(min-width: 576px) {
     #work {
+        #work-wrapper {
+            .project-img {
+                width: 50vw;
+            }
+        }
         .card {
-            width: 60vw;
+            height: 80vh;
+            top: 5vh;
         }
     }
 }
@@ -80,35 +123,70 @@
 // Medium devices, tablets //
 @media screen and(min-width: 768px) {
     #work {
+        #work-wrapper {
+            .project-img {
+                width: 50vw;
+                margin: 2rem;
+            }
+        }
         .card {
-            width: 50vw;
-            margin: 2rem;
+            height: 80vh;
+            .close-btn {
+                font-size: 36px;
+                right: 20px;
+            }
+            .img-cont {
+                .desk-img {
+                    width: 80%;
+                }
+                .mob-img {
+                    width: 15%;
+                    top: 150px;
+                    left: 80px;
+                }
+            }
+            .description {
+                margin: 0;
+                h3 {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
 
-// Large devices, desktops //
-@media screen and(min-width: 992px) {
+// Laptops //
+@media screen and(min-width: 1024px) {
     #work {
+        @include flexCenter(column);
         h2 {
             font-size: 46px;
         }
+        #work-wrapper {
+            width: 80%;
+            .project-img {
+                width: 20vw;
+                margin: 3rem;
+            }
+        }
         .card {
-            padding: 4rem 0 1rem 0;
-            flex-direction: column;
-            width: 40vw;
-            height: 70vh;
+            height: 80vh;
+            .close-btn {
+                font-size: 36px;
+                right: 20px;
+            }
             .img-cont {
                 .desk-img {
-                    padding: 0 0 3rem 0;
+                    width: 60%;
                 }
                 .mob-img {
-                    top: 90px;
-                    left: 10px;
+                    width: 15%;
+                    top: 100px;
+                    left: 250px;
                 }
             }
-            .text {
-                width: 30vw;
+            .description {
+                margin: 0;
                 h3 {
                     font-size: 20px;
                 }
@@ -118,4 +196,4 @@
 }
 
 // Larger desktop screens
-@media screen and(min-width: 1024px) {}
+@media screen and(min-width: 1440px) {}

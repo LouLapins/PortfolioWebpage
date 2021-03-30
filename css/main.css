@@ -283,13 +283,22 @@ body header .msg-link #msg-icon:hover {
 }
 
 body #work {
-  background-color: #efefef;
+  background-color: white;
 }
 
 body #work h2 {
-  margin: 0;
-  padding: 2rem;
+  margin: 2rem;
   text-align: center;
+  border-bottom: 2rem solid #efefef;
+}
+
+body #work .myModal {
+  position: absolute;
+  top: 8rem;
+  z-index: 2000;
+  height: 200rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 body #work #work-wrapper {
@@ -306,16 +315,36 @@ body #work #work-wrapper {
           align-items: center;
 }
 
+body #work #work-wrapper .project-img {
+  width: 70vw;
+  margin: 2rem;
+  position: relative;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+  box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+  cursor: pointer;
+}
+
+body #work #work-wrapper .project-img:hover {
+  -webkit-box-shadow: 7px 17px 20px 6px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+  box-shadow: 7px 17px 20px 6px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+}
+
 body #work .card {
+  position: fixed;
+  top: 10vh;
+  left: 5vw;
+  z-index: 3000;
+  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -323,16 +352,24 @@ body #work .card {
   background-color: white;
   -webkit-box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
   box-shadow: 0px 5px 8px 1px rgba(112, 112, 112, 0.69);
-  border-radius: 50px;
+  border-radius: 10px;
   width: 90vw;
-  margin: 0 0 2rem 0;
-  padding: 3rem 0 2rem 0;
-  cursor: pointer;
+  padding: 3rem 0 1rem 0;
 }
 
-body #work .card:hover {
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 13px 33px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 10px 13px -7px #000000, -1px 13px 33px 3px rgba(0, 0, 0, 0.1);
+body #work .card .close-btn {
+  font-size: 20px;
+  font-weight: 700;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+body #work .card .close-btn:hover {
+  color: #d3d2d2;
 }
 
 body #work .card .img-cont {
@@ -352,82 +389,152 @@ body #work .card .img-cont {
 
 body #work .card .img-cont .desk-img {
   width: 100%;
-  padding: 0 0 2rem 0;
+  margin-bottom: 2rem;
 }
 
 body #work .card .img-cont .mob-img {
   width: 25%;
   position: absolute;
-  top: 45px;
+  top: 50px;
   left: 10px;
   -webkit-box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
   box-shadow: -1px 5px 15px 3px rgba(0, 0, 0, 0.34);
 }
 
-body #work .card .text {
-  width: 80%;
+body #work .card .description {
+  width: 90%;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body #work .card .text h3 {
+body #work .card .description h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 18px;
 }
 
-body #work .card #more-btn {
-  font-family: "Roboto", sans-serif;
+body #work .card .description .visit-btn {
   font-size: 14px;
-  font-weight: 700;
+  background-color: black;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border-radius: 10px;
+  color: white;
+  margin: 1rem;
+  border: 1px solid black;
 }
 
-body #work .card #more-btn:hover {
-  color: #d3d2d2;
+body #work .card .description .visit-btn:hover {
+  background-color: white;
+  color: #2b2b2b;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 576px) {
+  body #work #work-wrapper .project-img {
+    width: 50vw;
+  }
   body #work .card {
-    width: 60vw;
+    height: 80vh;
+    top: 5vh;
   }
 }
 
 @media screen and (min-width: 768px) {
-  body #work .card {
+  body #work #work-wrapper .project-img {
     width: 50vw;
     margin: 2rem;
   }
+  body #work .card {
+    height: 80vh;
+  }
+  body #work .card .close-btn {
+    font-size: 36px;
+    right: 20px;
+  }
+  body #work .card .img-cont .desk-img {
+    width: 80%;
+  }
+  body #work .card .img-cont .mob-img {
+    width: 15%;
+    top: 150px;
+    left: 80px;
+  }
+  body #work .card .description {
+    margin: 0;
+  }
+  body #work .card .description h3 {
+    font-size: 20px;
+  }
 }
 
-@media screen and (min-width: 992px) {
-  body #work h2 {
-    font-size: 46px;
-  }
-  body #work .card {
-    padding: 4rem 0 1rem 0;
+@media screen and (min-width: 1024px) {
+  body #work {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 40vw;
-    height: 70vh;
+  }
+  body #work h2 {
+    font-size: 46px;
+  }
+  body #work #work-wrapper {
+    width: 80%;
+  }
+  body #work #work-wrapper .project-img {
+    width: 20vw;
+    margin: 3rem;
+  }
+  body #work .card {
+    height: 80vh;
+  }
+  body #work .card .close-btn {
+    font-size: 36px;
+    right: 20px;
   }
   body #work .card .img-cont .desk-img {
-    padding: 0 0 3rem 0;
+    width: 60%;
   }
   body #work .card .img-cont .mob-img {
-    top: 90px;
-    left: 10px;
+    width: 15%;
+    top: 100px;
+    left: 250px;
   }
-  body #work .card .text {
-    width: 30vw;
+  body #work .card .description {
+    margin: 0;
   }
-  body #work .card .text h3 {
+  body #work .card .description h3 {
     font-size: 20px;
   }
 }
 
 body #about {
   position: relative;
+}
+
+body #about h2 {
+  border-bottom: 2rem solid #efefef;
 }
 
 body #about .text-cont {
@@ -491,10 +598,6 @@ body #about #school a {
   font-weight: 700;
 }
 
-body #about #school #square {
-  background-color: transparent;
-}
-
 body #about #intern #intern-img {
   z-index: 200;
   margin-bottom: 2rem;
@@ -514,10 +617,6 @@ body #about #intern #intern-txt h5 .msg-link {
 
 body #about #intern #intern-txt h5 .msg-link:hover {
   color: #2b2b2b;
-}
-
-body #about #ball-lg {
-  background-color: transparent;
 }
 
 @media screen and (min-width: 576px) {
@@ -584,25 +683,6 @@ body #about #ball-lg {
   }
   body #about #school {
     padding: 2rem 0 2rem 0;
-  }
-  body #about #school #square {
-    background-color: lavender;
-    z-index: 100;
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    right: 330px;
-    top: 10px;
-  }
-  body #about #circle {
-    border-radius: 50%;
-    position: absolute;
-    z-index: 100;
-    width: 350px;
-    height: 350px;
-    background-color: lavender;
-    left: 200px;
-    bottom: 5px;
   }
   body #about #intern #intern-img {
     width: 20%;
@@ -729,5 +809,9 @@ body footer #socials li a:hover {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
+}
+
+.lockScreen {
+  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */
