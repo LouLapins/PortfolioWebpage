@@ -25,6 +25,7 @@
     border-radius: 50px;
     color: $main-clr;
     text-transform: uppercase;
+    cursor: pointer;
     &:hover {
         background-color: $accent-clr;
     }
