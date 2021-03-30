@@ -1,24 +1,24 @@
-                    @import "helpers/mixins";
-                    @import "helpers/variables";
-                    body {
-                        margin: 0;
-                        padding: 0;
-                        width: 100%;
-                        height: 100%;
-                        font-family: $main-font;
-                        font-weight: 300;
-                        line-height: 1.5;
-                        color: #2d2926;
-                        a {
-                            text-decoration: none;
-                            color: inherit;
+                        @import "helpers/mixins";
+                        @import "helpers/variables";
+                        body {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            height: 100%;
+                            font-family: $main-font;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            color: #2d2926;
+                            a {
+                                text-decoration: none;
+                                color: inherit;
+                            }
+                            @import "header";
+                            @import "work";
+                            @import "about";
+                            @import "footer";
                         }
-                        @import "header";
-                        @import "work";
-                        @import "about";
-                        @import "footer";
-                    }
-                    
-                    .lockScreen {
-                        overflow: hidden;
-                    }
+                        
+                        .lockScreen {
+                            overflow: hidden;
+                        }
