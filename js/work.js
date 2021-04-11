@@ -10,6 +10,7 @@ function renderProject() {
 
         $("<img>")
             .addClass("project-img")
+            .attr("tabindex", "0")
             .attr("src", project.mobImg)
             .attr("alt", "Screenshot of " + project.name + " site")
             .on("click", { project: project }, function() {
@@ -21,7 +22,7 @@ function renderProject() {
                 $("body")
                     .addClass("lockScreen");
 
-                let card = $("<div>")
+                $("<div>")
                     .addClass("card")
                     .hide()
                     .fadeIn(300)
