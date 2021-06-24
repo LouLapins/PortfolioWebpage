@@ -611,6 +611,10 @@ body #about #intern #intern-txt .dates {
   font-weight: 500;
 }
 
+body #about #intern #intern-txt .first {
+  color: #2b2b2b45;
+}
+
 body #about #intern #intern-txt h5 .msg-link {
   font-weight: 500;
 }
